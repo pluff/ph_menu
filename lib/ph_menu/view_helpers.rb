@@ -1,9 +1,11 @@
 module PhMenu
   module ViewHelpers
-    def render_menu(name, renderer = :default)
+    def render_menu(name, options = {renderer: :default, matcher: :default})
       config = PhMenu::Configuration.instance
-      menu = config.menus[name].new.build
-      config.renderers[renderer].new.render(menu)
+      menu = config.menus[name].new(request: controller.request, matcher: options[:matcher])
+      menu.build
+      renderer = config.renderers[options[:renderer]].new
+      renderer.render menu
     end
   end
 end

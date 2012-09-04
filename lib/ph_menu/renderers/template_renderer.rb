@@ -6,10 +6,8 @@ module PhMenu
       include PhMenu::Renderer
 
       def initialize
-        current_class = 'current'
-        ancestor_class = 'current_ancestor'
-        #id_generator = nil
-        #level_class_generator = Proc.new { |item| "level#{item.level}"}
+        @current_class = 'current'
+        @ancestor_class = 'current_ancestor'
       end
 
       def render(menu)
