@@ -1,6 +1,7 @@
 class PhMenu::Item
+
   attr_reader :parent, :level
-  attr_accessor :name, :items
+  attr_accessor :name, :items, :uri
 
   def initialize
     @level = 0
@@ -33,6 +34,7 @@ class PhMenu::Item
   def add_item(name, options = {}, &block)
     itemObj = self.class.new
     itemObj.name = name
+    itemObj.uri = options[:uri]
     itemObj.parent = self
     itemObj.current = true if options[:current]
     self.items << itemObj

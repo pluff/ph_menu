@@ -1,0 +1,7 @@
+require 'ph_menu/configuration'
+require 'ph_menu/menu'
+require 'ph_menu/item'
+require 'ph_menu/railtie'
+require 'ph_menu/version'
+require 'ph_menu/view_helpers'
+require 'ph_menu/renderers/template_renderer'

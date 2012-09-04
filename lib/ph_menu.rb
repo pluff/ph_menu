@@ -1,5 +1,4 @@
-require "ph_menu/version"
-require "ph_menu/railtie" if defined? Rails
+require "ph_menu/all"
 
 module PhMenu
   def self.configure(&block)
