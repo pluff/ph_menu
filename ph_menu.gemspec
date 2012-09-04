@@ -4,9 +4,9 @@ require File.expand_path('../lib/ph_menu/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Pavel Shutin"]
   gem.email         = ["publicshady@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "Menu library for Rails apps"
+  gem.summary       = "Flexible menu library for creating menus"
+  gem.homepage      = "https://github.com/pluff/ph_menu"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
