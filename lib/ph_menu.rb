@@ -1,5 +1,7 @@
 require "ph_menu/version"
 
 module PhMenu
-  # Your code goes here...
+  def self.configure(&block)
+    block.call PhMenu::Configuration.instance
+  end
 end
