@@ -20,8 +20,6 @@ class PhMenu::Menu
     unless @root
       @root = @item_class.new
       @root.instance_eval &structure
-      @matcher.request = @request
-      @matcher.detect_matches(@root) if @matcher
     end
     self
   end
@@ -29,6 +27,14 @@ class PhMenu::Menu
   def build!(&block)
     @root = nil
     self.build(&block)
+  end
+
+  def detect_currents
+    if @matcher
+      build unless @root
+      @matcher.request = @request
+      @matcher.detect_matches(@root)
+    end
   end
 
   def structure

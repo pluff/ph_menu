@@ -39,6 +39,7 @@ class PhMenu::Item
     itemObj.current = true if options[:current]
     self.items << itemObj
     itemObj.instance_eval(&block) if block
+    itemObj
   end
 
   private
