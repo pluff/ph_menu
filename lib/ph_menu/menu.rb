@@ -8,11 +8,8 @@ class PhMenu::Menu
   def initialize(options = {})
     options = {item_class: PhMenu::Item, matcher: :default, request: nil}.merge(options)
 
-    matcher_class = PhMenu::Configuration.instance.matchers[options[:matcher]]
-
-    raise "Matcher #{options[:matcher]} not found" unless matcher_class
     @item_class = options[:item_class]
-    @matcher = matcher_class.new
+    @matcher = PhMenu::Configuration.instance.matchers[options[:matcher]].constantize.new
     @request = options[:request]
   end
 
